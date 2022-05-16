@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Most popular bars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue&family=Oswald&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 
@@ -17,58 +21,103 @@
         <div class="barCards">
             <% data.forEach((bar)=> { %>
                 <div class="barCont">
-                    <div class="imgContr">
+                    <div class="imgCont">
                         <img src="<%=bar.url%>" alt="Bar image">
                     </div>
                     <div class="titleCont">
-                        <h4>
+                        <h2>
                             <%= bar.title %>
-                        </h4>
-                        <h6>
+                        </h2>
+                        <h3>
                             <%= bar.address %>
-                        </h6>
-                        <div class="valuationCont">
-                            <% switch (Math.round(bar.visitor_rating)) { case 1: %>
-                                <ul>
-                                    <li class="filledStar">1</li>
-                                    <li class="unfilledStar">2</li>
-                                    <li class="unfilledStar">3</li>
-                                    <li class="unfilledStar">4</li>
-                                    <li class="unfilledStar">5</li>
-                                </ul>
-                                <%break; case 2: %>
+                        </h3>
+                        <div class="scoreCont">
+                            <div class="starCont">
+                                <% switch (Math.round(bar.visitor_rating)) { case 1: %>
                                     <ul>
-                                        <li class="filledStar">1</li>
-                                        <li class="filledStar">2</li>
-                                        <li class="unfilledStar">3</li>
-                                        <li class="unfilledStar">4</li>
-                                        <li class="unfilledStar">5</li>
+                                        <li class="star">&#9733</li>
+                                        <li class="star">&#9734</li>
+                                        <li class="star">&#9734</li>
+                                        <li class="star">&#9734</li>
+                                        <li class="star">&#9734</li>
                                     </ul>
-                                    <%break; case 3: %>
+                                    <%break; case 2: %>
                                         <ul>
-                                            <li class="filledStar">1</li>
-                                            <li class="filledStar">2</li>
-                                            <li class="filledStar">3</li>
-                                            <li class="unfilledStar">4</li>
-                                            <li class="unfilledStar">5</li>
+                                            <li class="star">&#9733</li>
+                                            <li class="star">&#9733</li>
+                                            <li class="star">&#9734</li>
+                                            <li class="star">&#9734</li>
+                                            <li class="star">&#9734</li>
                                         </ul>
-                                        <%break; case 4: %>
+                                        <%break; case 3: %>
                                             <ul>
-                                                <li class="filledStar">1</li>
-                                                <li class="filledStar">2</li>
-                                                <li class="filledStar">3</li>
-                                                <li class="filledStar">4</li>
-                                                <li class="unfilledStar">5</li>
+                                                <li class="star">&#9733</li>
+                                                <li class="star">&#9733</li>
+                                                <li class="star">&#9733</li>
+                                                <li class="star">&#9734</li>
+                                                <li class="star">&#9734</li>
                                             </ul>
-                                            <%break; case 5:%>
+                                            <%break; case 4: %>
                                                 <ul>
-                                                    <li class="filledStar">1</li>
-                                                    <li class="filledStar">2</li>
-                                                    <li class="filledStar">3</li>
-                                                    <li class="filledStar">4</li>
-                                                    <li class="filledStar">5</li>
+                                                    <li class="star">&#9733</li>
+                                                    <li class="star">&#9733</li>
+                                                    <li class="star">&#9733</li>
+                                                    <li class="star">&#9733</li>
+                                                    <li class="star">&#9734</li>
                                                 </ul>
-                                                <% break; default: break; } %>
+                                                <%break; case 5:%>
+                                                    <ul>
+                                                        <li class="star">&#9733</li>
+                                                        <li class="star">&#9733</li>
+                                                        <li class="star">&#9733</li>
+                                                        <li class="star">&#9733</li>
+                                                        <li class="star">&#9733</li>
+                                                    </ul>
+                                                    <% break; default: break; } %>
+                            </div>
+                            <div class="starCont">
+                                <% switch (Math.round(bar.price_rating)) { case 1: %>
+                                    <ul>
+                                        <li class="euro1">&#x20AC</li>
+                                        <li class="euro2">&#x20AC</li>
+                                        <li class="euro2">&#x20AC</li>
+                                        <li class="euro2">&#x20AC</li>
+                                        <li class="euro2">&#x20AC</li>
+                                    </ul>
+                                    <%break; case 2: %>
+                                        <ul>
+                                            <li class="euro1">&#x20AC</li>
+                                            <li class="euro1">&#x20AC</li>
+                                            <li class="euro2">&#x20AC</li>
+                                            <li class="euro2">&#x20AC</li>
+                                            <li class="euro2">&#x20AC</li>
+                                        </ul>
+                                        <%break; case 3: %>
+                                            <ul>
+                                                <li class="euro1">&#x20AC</li>
+                                                <li class="euro1">&#x20AC</li>
+                                                <li class="euro1">&#x20AC</li>
+                                                <li class="euro2">&#x20AC</li>
+                                                <li class="euro2">&#x20AC</li>
+                                            </ul>
+                                            <%break; case 4: %>
+                                                <ul>
+                                                    <li class="euro1">&#x20AC</li>
+                                                    <li class="euro1">&#x20AC</li>
+                                                    <li class="euro1">&#x20AC</li>
+                                                    <li class="euro1">&#x20AC</li>
+                                                    <li class="euro2">&#x20AC</li>
+                                                </ul>
+                                                <%break; case 5:%>
+                                                    <ul>
+                                                        <li class="euro1">&#x20AC</li>
+                                                        <li class="euro1">&#x20AC</li>
+                                                        <li class="euro1">&#x20AC</li>
+                                                        <li class="euro1">&#x20AC</li>
+                                                        <li class="euro1">&#x20AC</li>
+                                                    </ul>
+                                                    <% break; default: break; } %>
+                            </div>
                         </div>
                     </div>
                 </div>
