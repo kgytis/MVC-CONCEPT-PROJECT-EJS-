@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most popular bars</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <section class="wrapper">
+        <div>
+            <h1>Most Popular Bars</h1>
+        </div>
+        <div class="barCards">
+            <% data.forEach((bar)=> { %>
+                <div class="barCont">
+                    <div class="imgContr">
+                        <img src="<%=bar.url%>" alt="Bar image">
+                    </div>
+                    <div class="titleCont">
+                        <h4>
+                            <%= bar.title %>
+                        </h4>
+                        <h6>
+                            <%= bar.address %>
+                        </h6>
+                        <div class="valuationCont">
+                            <% switch (Math.round(bar.visitor_rating)) { case 1: %>
+                                <ul>
+                                    <li class="filledStar">1</li>
+                                    <li class="unfilledStar">2</li>
+                                    <li class="unfilledStar">3</li>
+                                    <li class="unfilledStar">4</li>
+                                    <li class="unfilledStar">5</li>
+                                </ul>
+                                <%break; case 2: %>
+                                    <ul>
+                                        <li class="filledStar">1</li>
+                                        <li class="filledStar">2</li>
+                                        <li class="unfilledStar">3</li>
+                                        <li class="unfilledStar">4</li>
+                                        <li class="unfilledStar">5</li>
+                                    </ul>
+                                    <%break; case 3: %>
+                                        <ul>
+                                            <li class="filledStar">1</li>
+                                            <li class="filledStar">2</li>
+                                            <li class="filledStar">3</li>
+                                            <li class="unfilledStar">4</li>
+                                            <li class="unfilledStar">5</li>
+                                        </ul>
+                                        <%break; case 4: %>
+                                            <ul>
+                                                <li class="filledStar">1</li>
+                                                <li class="filledStar">2</li>
+                                                <li class="filledStar">3</li>
+                                                <li class="filledStar">4</li>
+                                                <li class="unfilledStar">5</li>
+                                            </ul>
+                                            <%break; case 5:%>
+                                                <ul>
+                                                    <li class="filledStar">1</li>
+                                                    <li class="filledStar">2</li>
+                                                    <li class="filledStar">3</li>
+                                                    <li class="filledStar">4</li>
+                                                    <li class="filledStar">5</li>
+                                                </ul>
+                                                <% break; default: break; } %>
+                        </div>
+                    </div>
+                </div>
+                <% })%>
+        </div>
+    </section>
+</body>
+
+</html>
