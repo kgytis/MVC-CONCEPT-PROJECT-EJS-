@@ -1,14 +1,19 @@
 import 'dotenv/config';
 import express from 'express';
-import path from 'path';
+
+
+import router from './routes/bars.js'
 
 const app = express();
 const port = process.env.PORT;
 
+
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.resolve('public')));
+app.use(express.static('public'));
+app.use('/bars', router);
+app.use('/', router);
 
 app.listen(port, () => {
     console.log(`Server is running on PORT http://localhost:${port}`)
